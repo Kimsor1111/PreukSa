@@ -4,14 +4,14 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>PreukSa</title>
-    <link rel="stylesheet" href="src/output.css" />
     <link rel="icon" href="asset/icon.png" class="object-cover" />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
     />
+    <script src="https://cdn.tailwindcss.com"></script>
   </head>
-  <body class="cursor-pointer flex flex-col items-center">
+  <body class="flex flex-col items-center">
     <!-- Navbar -->
     <nav class="xl:w-[1200px] w-[90%] h-full flex items-center justify-between">
       <div class="lg:h-[70px] w-[120px] h-[50px]">
@@ -29,7 +29,7 @@
         <button
           class="flex py-1.5 items-center gap-2 px-2 text-gray-500/90 hover:bg-gray-500/30 cursor-pointer rounded-lg text-[15px] font-medium"
         >
-          <i class="fa-solid fa-globe pt-[2px]"></i>
+          <i class="fa-solid fa-globe pt-[1.5px]"></i>
           <p>EN</p>
         </button>
       </div>
@@ -74,7 +74,44 @@
         </div>
       </section>
       <!-- Benefit Section -->
-      <section class="xl:w-[1200px] h-fit bg-red-500"></section>
+      <section
+        class="xl:w-[1200px] w-[90%] h-fit mt-10 grid md:grid-cols-2 grid-cols-1 gap-16"
+      >
+        <div class="flex flex-col items-center">
+          <div>
+            <img
+              src="asset/find_your_type.svg"
+              width="280"
+              height="280"
+              alt="1"
+            />
+          </div>
+          <h1 class="mt-5 text-2xl font-medium text-center">
+            Find out your personality type within minutes!
+          </h1>
+          <p class="mt-5 text-gray-500/70 text-lg text-center">
+            Our test offers in-depth and personalized insights, enabling you to
+            strategize your life and career more effectively.
+          </p>
+        </div>
+        <div class="flex flex-col items-center">
+          <div>
+            <img
+              src="asset/get_insights.svg"
+              width="280"
+              height="280"
+              alt="1"
+            />
+          </div>
+          <h1 class="mt-5 text-2xl font-medium text-center">
+            Discover life-changing insights.
+          </h1>
+          <p class="mt-5 text-gray-500/70 text-lg text-center">
+            92% of participants have successfully implemented changes to better
+            their personal and work environments following our recommendations.
+          </p>
+        </div>
+      </section>
     </main>
     <br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
     <!-- Footer -->
