@@ -9,12 +9,45 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
     />
+    <style>
+      ::-webkit-scrollbar {
+        display: none;
+      }
+    </style>
     <script src="https://cdn.tailwindcss.com"></script>
   </head>
-  <body class="flex flex-col items-center">
+  <body
+    class="xl:overflow-y-auto flex flex-col items-center cursor-default overflow-x-hidden relative"
+  >
+    <!-- SideMenu for device less than xl -->
+    <aside
+      class="sidemenu xl:hidden hidden w-full bg-white lg:[height:calc(100vh-70px)] lg:top-[70px] [height:calc(100vh-60px)] top-[60px] absolute flex-col items-center justify-center"
+    >
+      <ul class="gap-8 flex flex-col items-center">
+        <li class="relative text-[#008559]">
+          <a class="cursor-pointer text-2xl font-medium">Home</a>
+        </li>
+        <li class="relative hover:text-[#008559] text-gray-500/80">
+          <a class="cursor-pointer text-2xl font-medium">About</a>
+        </li>
+        <li class="relative hover:text-[#008559] text-gray-500/80">
+          <a class="cursor-pointer text-2xl font-medium">Pricing</a>
+        </li>
+        <li class="relative hover:text-[#008559] text-gray-500/80">
+          <a class="cursor-pointer text-2xl font-medium">FAQs</a>
+        </li>
+        <li class="relative hover:text-[#008559] text-gray-500/80">
+          <a class="cursor-pointer text-2xl font-medium">Contact Us</a>
+        </li>
+      </ul>
+      <a
+        class="border-2 border-[#008559] text-[#008559] cursor-pointer py-3 text-xl rounded-lg font-bold mt-5 w-[95%] flex items-center justify-center"
+        >Sign In</a
+      >
+    </aside>
     <!-- Navbar -->
     <nav class="xl:w-[1200px] w-[90%] h-full flex items-center justify-between">
-      <div class="lg:h-[70px] w-[120px] h-[50px]">
+      <div class="lg:h-[70px] w-[120px] h-[60px]">
         <img
           src="asset/logo.jpg"
           class="size-full object-contain"
@@ -22,8 +55,31 @@
         />
       </div>
       <div class="w-fit h-full flex items-center gap-3">
+        <ul class="gap-5 mr-5 xl:flex hidden">
+          <li
+            class="relative text-[#008559] after:content-[''] after:w-full after:h-[2.3px] after:bg-[#008559] after:absolute after:bottom-[-5px] after:left-0"
+          >
+            <a class="cursor-pointer text-lg font-medium">Home</a>
+          </li>
+          <li class="relative hover:text-[#008559] text-gray-500/80">
+            <a class="cursor-pointer text-lg font-medium">About</a>
+          </li>
+          <li class="relative hover:text-[#008559] text-gray-500/80">
+            <a class="cursor-pointer text-lg font-medium">Pricing</a>
+          </li>
+          <li class="relative hover:text-[#008559] text-gray-500/80">
+            <a class="cursor-pointer text-lg font-medium">FAQs</a>
+          </li>
+          <li class="relative hover:text-[#008559] text-gray-500/80">
+            <a class="cursor-pointer text-lg font-medium">Contact Us</a>
+          </li>
+        </ul>
         <a
-          class="xl:block hidden bg-[#008559] cursor-pointer py-1.5 px-3 rounded-lg text-white font-medium"
+          class="xl:block hidden border border-[#008559] text-[#008559] cursor-pointer py-2 px-3 rounded-lg font-medium"
+          >Sign In</a
+        >
+        <a
+          class="xl:block hidden bg-[#008559] cursor-pointer py-2 px-3 rounded-lg text-white font-medium"
           >Start Personality Test</a
         >
         <button
@@ -32,6 +88,9 @@
           <i class="fa-solid fa-globe pt-[1.5px]"></i>
           <p>EN</p>
         </button>
+        <i
+          class="fa-solid fa-bars xl:hidden text-xl text-[#008559] cursor-pointer"
+        ></i>
       </div>
     </nav>
     <!-- Main -->
@@ -53,19 +112,16 @@
           <p class="md:text-2xl md:text-start md:mr-10 text-lg text-center">
             With this test, you will find out your exact personality type.
           </p>
-          <h3 class="md:text-xl text-lg font-medium text-center">
-            Start by selecting your gender:
-          </h3>
           <div class="w-fit flex gap-5">
             <a
-              class="md:text-xl cursor-pointer flex items-center justify-center gap-3 bg-[#008559] text-sm font-medium text-white px-8 rounded-lg py-3"
-              ><i class="fa-solid fa-mars pt-[2px]"></i> Male</a
+              class="block w-fit bg-[#008559] py-2.5 cursor-pointer px-5 text-lg rounded-lg text-white font-medium"
             >
-            <a
-              class="md:text-xl cursor-pointer flex items-center justify-center gap-3 bg-[#c765a2] text-sm font-medium text-white px-8 rounded-lg py-3"
-              ><i class="fa-solid fa-venus pt-[2px]"></i> Female</a
-            >
+              Start Personality Test
+            </a>
           </div>
+          <p class="text-[12px] text-gray-500/80">
+            By using this site, you agree with the terms & conditions
+          </p>
         </div>
         <div
           class="lg:mt-8 lg:mx-10 lg:block md:hidden w-[300px] mt-10 mx-5 block"
@@ -198,15 +254,15 @@
       <!-- Recieve Section -->
       <section class="xl:w-[1200px] w-[90%] mt-20">
         <h1 class="text-4xl font-medium text-center">What You Will Receive</h1>
-        <div class="grid md:grid-cols-5 grid-cols-1 gap-5 mt-10 md:px-0 px-5">
-          <div class="flex md:flex-col md:items-center gap-5">
+        <div class="md:grid-cols-5 md:px-0 grid grid-cols-1 gap-5 mt-10 px-5">
+          <div class="md:flex-col md:items-center flex gap-5">
             <span
               class="size-[50px] bg-[#008559] rounded-full flex items-center justify-center text-white"
             >
               <i class="fa-solid fa-clipboard"></i>
             </span>
             <span
-              class="md:w-full flex flex-col md:items-center [width:calc(100%-70px)]"
+              class="md:w-full md:items-center flex flex-col [width:calc(100%-70px)]"
             >
               <h1 class="md:text-center mb-2 font-medium text-lg">
                 Personality Report
@@ -292,17 +348,17 @@
         </div>
       </section>
       <!-- Expert Section -->
-      <section class="xl:w-[1200px] w-[90%] mt-20 grid md:grid-cols-2 gap-10">
+      <section class="xl:w-[1200px] md:grid-cols-2 w-[90%] mt-20 grid gap-10">
         <div class="flex items-center">
           <img
             src="asset/expert.jpg"
-            class="rounded-3xl lg:w-fit w-full xl:h-[600px] lg:h-[500px] md:h-[400px] h-[350px] object-cover"
+            class="xl:h-[600px] lg:h-[500px] md:h-[400px] rounded-3xl lg:w-fit w-full h-[350px] object-cover"
             alt=""
           />
         </div>
-        <div class="flex flex-col justify-center gap-4 md:py-5">
+        <div class="md:py-5 flex flex-col justify-center gap-4">
           <h1 class="text-4xl font-[450]">Crafted by a team of experts</h1>
-          <p class="text-gray-500/80 text-md">
+          <p class="text-gray-500/80 text-md pr-10">
             Our Personality Test was developed with precision by a team of
             experts led by John Nelson, certified psychologist deeply engaged in
             psychological research. This expert, with a strong background in
@@ -322,7 +378,73 @@
         </div>
       </section>
     </main>
-    <br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
     <!-- Footer -->
+    <footer class="xl:w-[1200px] w-[90%] mt-10">
+      <div
+        class="md:flex-nowrap w-full border-y-2 border-grey-500/80 py-5 flex flex-row flex-wrap gap-5"
+      >
+        <div
+          class="md:w-[300px] md:border-b-0 border-b-2 py-2 border-grey-500/80 w-full md:block flex items-center flex-col"
+        >
+          <img
+            src="asset/logo.jpg"
+            class="md:w-[70px] md:h-[50px] w-[150px]"
+            alt=""
+          />
+          <p
+            class="md:text-sm md:text-start text-center text-lg mt-4 text-gray-500/80"
+          >
+            Personality type tests by certified psychologists and researchers.
+          </p>
+        </div>
+        <div class="md:[width:calc(100%-300px)] w-full">
+          <div
+            class="grid xl:grid-cols-3 grid-cols-2 text-gray-500/80 text-sm gap-3"
+          >
+            <ul class="flex flex-col gap-1">
+              <li><a class="hover:text-black">Home</a></li>
+              <li><a class="hover:text-black">About</a></li>
+              <li><a class="hover:text-black">Pricing</a></li>
+              <li><a class="hover:text-black">FAQs</a></li>
+              <li class="xl:hidden">
+                <a class="hover:text-black">Contact</a>
+              </li>
+            </ul>
+            <ul class="flex flex-col gap-1">
+              <li class="xl:block hidden">
+                <a class="hover:text-black">Contact</a>
+              </li>
+              <li><a class="hover:text-black">Sign in</a></li>
+              <li>
+                <a class="hover:text-black">Cancel Subscription</a>
+              </li>
+              <li class="xl:hidden">
+                <a class="hover:text-black">Privacy Policy</a>
+              </li>
+              <li class="xl:hidden">
+                <a class="hover:text-black">Terms of use</a>
+              </li>
+            </ul>
+            <ul class="flex-col gap-1 xl:flex hidden">
+              <li><a class="hover:text-black">Privacy Policy</a></li>
+              <li><a class="hover:text-black">Terms of use</a></li>
+            </ul>
+          </div>
+          <div class="flex flex-col h-fit mt-3 text-gray-500/80">
+            <h1 class="content text-md">
+              Disclaimer: The Site does not offer professional or definitively
+              accurate...
+            </h1>
+            <p class="seemore underline cursor-pointer">Read More</p>
+          </div>
+        </div>
+      </div>
+      <div
+        class="w-full py-5 flex items-center justify-center text-gray-500/80"
+      >
+        © 2025 PreukSa™. All rights reserved.
+      </div>
+    </footer>
   </body>
+  <script src="script.js"></script>
 </html>
